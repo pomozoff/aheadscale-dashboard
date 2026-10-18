@@ -85,7 +85,7 @@ const AvailableOnPlanText = ({
   if (!isNetBirdCloud()) {
       return (
       <>
-        {featureText} {isOrAre} available with a NetBird Enterprise commercial license, or on NetBird Cloud with the {teamOrBusiness}
+        {featureText} {isOrAre} available with a Aheadscale Enterprise commercial license, or on Aheadscale Cloud with the {teamOrBusiness}
       </>
       )
   }

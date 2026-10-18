@@ -108,7 +108,7 @@ export const CustomDomainModal = ({
                   href={"https://status.netbird.io/"}
                   target={"_blank"}
                 >
-                  NetBird Status
+                  Aheadscale Status
                 </InlineLink>{" "}
                 or reach out to{"  "}
                 <InlineLink href={"mailto:support@netbird.io"}>

@@ -82,27 +82,27 @@ export const PeerSSHInstructions = ({
             {client === "cli" ? (
               <Steps.Step step={1}>
                 <p className={"font-normal"}>
-                  If you are using NetBird via CLI, you can enable SSH by
+                  If you are using Aheadscale via CLI, you can enable SSH by
                   running{" "}
                   {isWindows
                     ? "these commands in an elevated prompt"
                     : "these commands as root"}
-                  . Run the first one only if NetBird is already running. On a
+                  . Run the first one only if Aheadscale is already running. On a
                   machine where you do not have those rights, an administrator
                   has to run them.
                 </p>
-                <Code codeToCopy={`${prefix}netbird down`}>
-                  <Code.Line>{`${prefix}netbird down`}</Code.Line>
+                <Code codeToCopy={`${prefix}aheadscale down`}>
+                  <Code.Line>{`${prefix}aheadscale down`}</Code.Line>
                 </Code>
                 <Code>
-                  <Code.Line>{`${prefix}netbird up --allow-server-ssh --enable-ssh-root`}</Code.Line>
+                  <Code.Line>{`${prefix}aheadscale up --allow-server-ssh --enable-ssh-root`}</Code.Line>
                 </Code>
               </Steps.Step>
             ) : (
               <Steps.Step step={1}>
                 <p className={"font-normal"}>
-                  If you are using NetBird via the Desktop Client, click on the
-                  NetBird tray icon, go to <Mark>Settings</Mark> and click{" "}
+                  If you are using Aheadscale via the Desktop Client, click on the
+                  Aheadscale tray icon, go to <Mark>Settings</Mark> and click{" "}
                   <Mark>Allow SSH</Mark>. If you want to enable Root Login go to{" "}
                   <Mark>Settings &gt; Advanced Settings</Mark> and enable SSH
                   Root Login under the SSH tab.
@@ -113,7 +113,7 @@ export const PeerSSHInstructions = ({
 
             <Steps.Step step={2}>
               <p className={"font-normal"}>
-                Starting from NetBird v0.61.0, SSH requires an explicit access
+                Starting from Aheadscale v0.61.0, SSH requires an explicit access
                 control policy to allow SSH connections to this machine.
               </p>
               <div className={"mt-2"}>
@@ -128,7 +128,7 @@ export const PeerSSHInstructions = ({
             </Steps.Step>
             <Steps.Step step={3} line={false}>
               <p className={"font-normal"}>
-                Once the NetBird SSH server is allowed on the client, <br />
+                Once the Aheadscale SSH server is allowed on the client, <br />
                 click <Mark>Confirm & Enable</Mark> below to finish the setup.
               </p>
             </Steps.Step>

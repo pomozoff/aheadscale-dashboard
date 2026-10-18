@@ -220,7 +220,7 @@ export const OnboardingProvider = ({
     try {
       await submitHubspotForm({
         // Dedicated HubSpot form for the self-hosted Agent Network signup, and
-        // NetBird's portal id — hardcoded so the submission works without the
+        // Aheadscale's portal id — hardcoded so the submission works without the
         // operator configuring NETBIRD_HUBSPOT_PORTAL_ID on their deployment.
         id: "f387844f-8752-489e-a7b3-4ded545a2f2f",
         portalId: "144571599",

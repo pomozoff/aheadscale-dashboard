@@ -106,7 +106,7 @@ export const useNetBirdClient = () => {
         setTimeout(resolve, WASM_CONFIG.RETRY_DELAY),
       );
     }
-    throw new Error("NetBird WASM failed to initialize in time");
+    throw new Error("Aheadscale WASM failed to initialize in time");
   }, []);
 
   const initIronRDP = useCallback(() => {
@@ -211,7 +211,7 @@ export const useNetBirdClient = () => {
   const detectSSHServerType = useCallback(
     async (host: string, port: number, timeoutMs: number): Promise<boolean> => {
       if (!netBirdClient.current?.detectSSHServerType) {
-        throw new Error("NetBird client not ready");
+        throw new Error("Aheadscale client not ready");
       }
       return netBirdClient.current.detectSSHServerType(host, port, timeoutMs);
     },

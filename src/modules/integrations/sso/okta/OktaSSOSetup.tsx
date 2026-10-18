@@ -135,7 +135,7 @@ export default function OktaSSOSetup({ open, onOpenChange }: Props) {
 
           <IntegrationModalHeader
             image={integrationImage}
-            title={"Connect NetBird with Okta SSO"}
+            title={"Connect Aheadscale with Okta SSO"}
             description={
               "Use Okta as a Single Sign-On provider to authenticate users. Follow the steps below to get started."
             }
@@ -198,7 +198,7 @@ export default function OktaSSOSetup({ open, onOpenChange }: Props) {
             <div className={"px-8 py-3 flex flex-col gap-0 mt-4"}>
               <p className={"font-medium flex gap-3 items-center text-base"}>
                 <Box size={20} />
-                Install NetBird application for Okta
+                Install Aheadscale application for Okta
               </p>
               <Steps>
                 <Steps.Step step={1}>
@@ -278,7 +278,7 @@ export default function OktaSSOSetup({ open, onOpenChange }: Props) {
                   <p className={"font-normal"}>
                     Enter your
                     <Mark>Primary E-Mail Domain</Mark> which will later be used
-                    to log in to NetBird.
+                    to log in to Aheadscale.
                   </p>
                   <Input
                     customPrefix={<GlobeIcon size={16} />}

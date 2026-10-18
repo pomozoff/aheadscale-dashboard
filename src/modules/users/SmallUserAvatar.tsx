@@ -26,12 +26,12 @@ export const SmallUserAvatar = ({
       )}
       style={{
         color:
-          email === "NetBird"
+          email === "Aheadscale"
             ? "#808080"
             : generateColorFromString(name || id || "System User"),
       }}
     >
-      {email === "NetBird" ? (
+      {email === "Aheadscale" ? (
         <Cog size={14} />
       ) : (
         name?.charAt(0) || id?.charAt(0)

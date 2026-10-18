@@ -62,7 +62,7 @@ const DistributorSubscriptionModalContent = ({
     >
       <ModalHeader
         icon={<CreditCardIcon size={18} />}
-        title={`NetBird Plan for ${name}`}
+        title={`Aheadscale Plan for ${name}`}
         description={`Select the plan that best fits your customer's needs.`}
         color={"netbird"}
       />

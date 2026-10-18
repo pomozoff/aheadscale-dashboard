@@ -104,7 +104,7 @@ export default function AccessTokensTable({ user }: Readonly<Props>) {
               className={"py-3"}
               title={"No access tokens"}
               description={
-                "You don't have any access tokens yet. You can add a token to access the NetBird API."
+                "You don't have any access tokens yet. You can add a token to access the Aheadscale API."
               }
               icon={<IconApi size={20} className={"text-nb-gray-300"} />}
             />

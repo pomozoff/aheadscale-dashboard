@@ -194,8 +194,8 @@ export function SetupContent({
 
       <IntegrationModalHeader
         image={image || integrationImage}
-        title={`Connect NetBird with ${name}`}
-        description={`Start syncing your users and groups from ${name} to NetBird. Follow the steps below to get started.`}
+        title={`Connect Aheadscale with ${name}`}
+        description={`Start syncing your users and groups from ${name} to Aheadscale. Follow the steps below to get started.`}
       />
 
       {step === -1 && (
@@ -309,7 +309,7 @@ export function SetupContent({
             data={[
               {
                 label: "Name",
-                value: "NetBird",
+                value: "Aheadscale",
               },
               {
                 label: "API Type",

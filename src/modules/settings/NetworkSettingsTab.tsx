@@ -339,7 +339,7 @@ function NetworkSettingsTabContent({ account }: Readonly<Props>) {
             helpText={
               <>
                 Resolves DNS for routed domains on the routing peer instead of
-                on the client. Requires NetBird client v0.35 or higher. Changes
+                on the client. Requires Aheadscale client v0.35 or higher. Changes
                 will only take effect after restarting the clients.{" "}
                 <InlineLink
                   href={

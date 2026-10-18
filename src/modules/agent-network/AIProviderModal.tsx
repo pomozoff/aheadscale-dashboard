@@ -154,11 +154,11 @@ function upstreamUrlHelpText(providerId: AIProviderId): string {
     case "openrouter":
       return "OpenRouter uses a fixed endpoint, openrouter.ai/api/v1; apps choose the upstream provider via the model prefix, e.g. anthropic/claude-* or openai/gpt-*.";
     case "agentgateway":
-      return "The agentgateway proxy listener URL reachable from the NetBird proxy. Keep this listener private so requests cannot bypass NetBird's identity enforcement.";
+      return "The agentgateway proxy listener URL reachable from the Aheadscale proxy. Keep this listener private so requests cannot bypass Aheadscale's identity enforcement.";
     case "vllm":
       return "Your local vLLM server's OpenAI-compatible base URL.";
     default:
-      return "Where NetBird forwards the traffic.";
+      return "Where Aheadscale forwards the traffic.";
   }
 }
 
@@ -401,7 +401,7 @@ export default function AIProviderModal({
   // a private service — reachable only from connected peers, authenticated by
   // their tunnel identity — so it needs a cluster with private capabilities.
   // supports_private is the flag for that, the same one the Reverse Proxy
-  // modal gates NetBird-Only Access on, and management refuses a bootstrap
+  // modal gates Aheadscale-Only Access on, and management refuses a bootstrap
   // onto a cluster reporting it false. Picking
   // from the filtered list keeps the wizard from proposing a cluster the API
   // rejects — and the endpoint it assigns is immutable, so a wrong pick is not
@@ -852,7 +852,7 @@ export default function AIProviderModal({
   // tokens as a discounted SUBSET of input (one rate), "anthropic" /
   // "bedrock" bill two ADDITIVE buckets (cache read + cache write).
   // Gateways/custom entries (and older backends) declare no surfaces —
-  // NetBird can't know the upstream shape, so every field is offered.
+  // Aheadscale can't know the upstream shape, so every field is offered.
   // Every outcome of a discovery run, resolved to the one line that reports
   // it. Kept in one slot below the button rather than beside it: a message
   // appearing next to the button reflowed the tab — and with it the centered
@@ -982,7 +982,7 @@ export default function AIProviderModal({
                     <>
                       AI provider and upstream URL to expose
                       <br />
-                      through NetBird.
+                      through Aheadscale.
                     </>
                   }
                 >
@@ -1095,7 +1095,7 @@ export default function AIProviderModal({
                         content={
                           <>
                             Upload the Vertex AI service account JSON key.
-                            NetBird base64-encodes it and prefixes it with{" "}
+                            Aheadscale base64-encodes it and prefixes it with{" "}
                             <code className={"text-nb-gray-200"}>
                               keyfile::
                             </code>{" "}
@@ -1144,7 +1144,7 @@ export default function AIProviderModal({
                       <HelpTooltip
                         content={
                           <>
-                            NetBird injects it as{" "}
+                            Aheadscale injects it as{" "}
                             <code className={"text-nb-gray-200"}>
                               {catalog?.auth_header_template}
                             </code>{" "}
@@ -1354,7 +1354,7 @@ export default function AIProviderModal({
                 <FormRow
                   label={"Groups header"}
                   helpText={
-                    "Wire header name receiving the caller's NetBird groups as a comma-separated list. Leave empty to skip."
+                    "Wire header name receiving the caller's Aheadscale groups as a comma-separated list. Leave empty to skip."
                   }
                 >
                   <Input
@@ -1375,7 +1375,7 @@ export default function AIProviderModal({
                 <div>
                   <Label>Identity Metadata</Label>
                   <HelpText className={"mb-0"}>
-                    NetBird stamps a JSON object onto the{" "}
+                    Aheadscale stamps a JSON object onto the{" "}
                     <code
                       className={
                         "text-xs font-mono text-nb-gray-100 bg-nb-gray-900/60 rounded px-1.5 py-0.5"
@@ -1409,7 +1409,7 @@ export default function AIProviderModal({
                 <FormRow
                   label={"Groups key"}
                   helpText={
-                    "JSON key receiving the caller's NetBird groups as a comma-separated string. Leave empty to skip."
+                    "JSON key receiving the caller's Aheadscale groups as a comma-separated string. Leave empty to skip."
                   }
                 >
                   <Input
@@ -1439,20 +1439,20 @@ export default function AIProviderModal({
                     </>
                   }
                   helpText={
-                    "Stamp the trusted NetBird identity headers below onto upstream requests."
+                    "Stamp the trusted Aheadscale identity headers below onto upstream requests."
                   }
                 />
 
                 <div>
                   <Label>Trusted Identity Headers</Label>
                   <HelpText className={"mb-0"}>
-                    NetBird removes caller-supplied values before adding the
+                    Aheadscale removes caller-supplied values before adding the
                     authenticated identity shown below. The upstream listener
-                    must remain reachable only through the NetBird proxy.
+                    must remain reachable only through the Aheadscale proxy.
                     {providerId === "agentgateway" && (
                       <>
                         {" "}
-                        The virtual key authenticates NetBird but does not make
+                        The virtual key authenticates Aheadscale but does not make
                         headers from another network path trustworthy.
                       </>
                     )}
@@ -1502,7 +1502,7 @@ export default function AIProviderModal({
                 <div>
                   <Label>Identity Metadata</Label>
                   <HelpText className={"mb-0"}>
-                    NetBird stamps the{" "}
+                    Aheadscale stamps the{" "}
                     <code
                       className={
                         "text-xs font-mono text-nb-gray-100 bg-nb-gray-900/60 rounded px-1.5 py-0.5"
@@ -1549,7 +1549,7 @@ export default function AIProviderModal({
                 <div>
                   <Label>Identity Metadata</Label>
                   <HelpText className={"mb-0"}>
-                    NetBird stamps the caller&apos;s identity into the{" "}
+                    Aheadscale stamps the caller&apos;s identity into the{" "}
                     <InlineLink
                       href={
                         "https://docs.aws.amazon.com/bedrock/latest/userguide/cost-mgmt-request-metadata.html"
@@ -1583,7 +1583,7 @@ export default function AIProviderModal({
                 <div>
                   <Label>Identity Headers</Label>
                   <HelpText className={"mb-0"}>
-                    NetBird stamps the user identity and group list onto{" "}
+                    Aheadscale stamps the user identity and group list onto{" "}
                     <code
                       className={
                         "text-xs font-mono text-nb-gray-100 bg-nb-gray-900/60 rounded px-1.5 py-0.5"
@@ -1651,7 +1651,7 @@ export default function AIProviderModal({
                 <div>
                   <Label>Identity Attribution</Label>
                   <HelpText className={"mb-0"}>
-                    NetBird stamps the caller&apos;s user identity onto the
+                    Aheadscale stamps the caller&apos;s user identity onto the
                     request body&apos;s{" "}
                     <code
                       className={
@@ -1677,9 +1677,9 @@ export default function AIProviderModal({
                 <HelpText className={"mb-0"}>
                   <strong>No groups dimension.</strong> OpenRouter does not
                   document a per-request tag, label, or team field — only
-                  per-user identity. NetBird&apos;s group memberships are not
+                  per-user identity. Aheadscale&apos;s group memberships are not
                   propagated to OpenRouter; if you need per-group attribution,
-                  query NetBird&apos;s own access log instead of
+                  query Aheadscale&apos;s own access log instead of
                   OpenRouter&apos;s analytics.
                 </HelpText>
                 <HelpText className={"mb-0"}>
@@ -1702,7 +1702,7 @@ export default function AIProviderModal({
                     Models exposed through this endpoint, with the per-1k
                     input/output prices used for cost tracking. Empty = all
                     catalog models allowed at catalog prices. Cache rates left
-                    empty fall back to NetBird&apos;s defaults for the model; 0
+                    empty fall back to Aheadscale&apos;s defaults for the model; 0
                     bills cached tokens at the input rate.
                   </HelpText>
                 </div>
@@ -1937,7 +1937,7 @@ type CatalogModelOption = {
   cached_input_per_1k?: number;
   cache_read_per_1k?: number;
   cache_creation_per_1k?: number;
-  // false for a model the vendor reported but NetBird's pricing table does
+  // false for a model the vendor reported but Aheadscale's pricing table does
   // not know. It still lands with 0 rates, which is indistinguishable from a
   // genuinely free model — so the Models tab names these explicitly rather
   // than letting the operator register one that meters at zero.
@@ -1968,7 +1968,7 @@ function optionalPriceFromInput(s: string): number | undefined {
 }
 
 // OptionalPriceField is a price input whose EMPTY state is meaningful:
-// empty = undefined = "inherit NetBird's default rate for this model",
+// empty = undefined = "inherit Aheadscale's default rate for this model",
 // while an explicit 0 disables the cache discount. It must never coerce
 // one into the other, so it keeps its own string state and only reports
 // undefined for a blank box.
@@ -2075,7 +2075,7 @@ function ModelRowEditor({
 
   // Custom-model entry: catalog providers get a "Custom model…" option
   // that swaps the dropdown for a free-text input, so operators can add
-  // models NetBird doesn't list yet (e.g. a model released after this
+  // models Aheadscale doesn't list yet (e.g. a model released after this
   // build). Rows loaded with an id the catalog doesn't know start in
   // custom mode so their id is editable rather than trapped in a
   // single-option dropdown.
@@ -2113,7 +2113,7 @@ function ModelRowEditor({
     row.cacheReadPer1k !== undefined ||
     row.cacheCreationPer1k !== undefined;
   // Cache rates live behind a per-row disclosure, collapsed by default:
-  // most operators keep NetBird's defaults, so the row stays compact.
+  // most operators keep Aheadscale's defaults, so the row stays compact.
   // The collapsed summary ("· custom" vs "· default") signals when a
   // row carries stored rates worth expanding.
   const [cacheOpen, setCacheOpen] = useState(false);

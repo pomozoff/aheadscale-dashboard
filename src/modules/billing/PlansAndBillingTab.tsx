@@ -207,8 +207,8 @@ const PlansAndBillingTabContent = () => {
         <div className={"max-w-3xl"}>
           <h2>
             {subscription?.active
-              ? "Update your NetBird Plan"
-              : "Upgrade your NetBird Plan"}
+              ? "Update your Aheadscale Plan"
+              : "Upgrade your Aheadscale Plan"}
           </h2>
 
           <Paragraph>

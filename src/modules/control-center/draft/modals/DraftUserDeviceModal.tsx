@@ -86,7 +86,7 @@ const StepperContent = ({
       <ModalHeader
         icon={<MonitorSmartphoneIcon size={18} className={"text-netbird"} />}
         title={`Set up “${name}”`}
-        description={"Install NetBird and assign the registered peer."}
+        description={"Install Aheadscale and assign the registered peer."}
         color={"netbird"}
       />
       <Separator />
@@ -94,7 +94,7 @@ const StepperContent = ({
         <Steps>
           <Steps.Step step={1}>
             <p className={"text-sm font-normal"}>
-              Install NetBird on the device. Skip if it is already installed.
+              Install Aheadscale on the device. Skip if it is already installed.
             </p>
             <div className={"flex gap-4"}>
               <Button
@@ -109,7 +109,7 @@ const StepperContent = ({
                 }
               >
                 <DownloadIcon size={14} />
-                Install NetBird
+                Install Aheadscale
               </Button>
             </div>
           </Steps.Step>

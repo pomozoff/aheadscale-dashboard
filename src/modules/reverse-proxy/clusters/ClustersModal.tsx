@@ -488,7 +488,7 @@ spec:
               {!isNetBirdCloud() && (
                 <Callout variant={"warning"}>
                   For self-hosted deployments, make sure the proxy service
-                  routes are configured on your NetBird management server before
+                  routes are configured on your Aheadscale management server before
                   starting the proxy.&nbsp;
                   <InlineLink
                     href={REVERSE_PROXY_SELFHOSTED_ROUTING_DOCS_LINK}

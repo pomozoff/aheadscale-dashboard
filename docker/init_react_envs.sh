@@ -76,7 +76,7 @@ export NETBIRD_ANALYTICS_EXCLUDED_EMAILS=${NETBIRD_ANALYTICS_EXCLUDED_EMAILS}
 # A permanent banner for this deployment, shown to every user; empty for none.
 export NETBIRD_ANNOUNCEMENT=${NETBIRD_ANNOUNCEMENT}
 
-echo "NetBird latest version: ${NETBIRD_LATEST_VERSION}"
+echo "Aheadscale latest version: ${NETBIRD_LATEST_VERSION}"
 
 # Build CSP
 FIRST_PARTY_CSP="pkgs.netbird.io"

@@ -251,9 +251,9 @@ function BillingContextProvider({ children }: Readonly<Props>) {
           mutate("/integrations/billing/subscription");
         });
         notify({
-          title: "NetBird Subscription",
+          title: "Aheadscale Subscription",
           description: `Successfully subscribed to the ${plan.name} plan`,
-          loadingMessage: "Subscribing to NetBird via AWS Marketplace...",
+          loadingMessage: "Subscribing to Aheadscale via AWS Marketplace...",
           promise: promise,
         });
         return promise;

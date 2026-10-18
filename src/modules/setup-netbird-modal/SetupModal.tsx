@@ -144,8 +144,8 @@ export function SetupModalContent({
   const effectiveSetupKey = setupKey ?? generatedKey?.key;
 
   // Legacy callers that already have a setupKey (routing peers) hide mobile.
-  const hideDocker = isUserDevice === true;
-  const hideMobile = isUserDevice === false || !!setupKey;
+  const hideDocker = true;
+  const hideMobile = true;
   const showKeyGenerator = isUserDevice === false && !setupKey;
 
   // Keeps the `--setup-key SETUP_KEY` token visible before a key exists.
@@ -159,8 +159,8 @@ export function SetupModalContent({
           content={
             <>
               A setup key is a one-time, pre-authentication token used to
-              enroll an unattended machine with NetBird. Pass it to{" "}
-              <code>netbird up</code> via <code>--setup-key</code> and the
+              enroll an unattended machine with Aheadscale. Pass it to{" "}
+              <code>aheadscale up</code> via <code>--setup-key</code> and the
               peer registers without an interactive login.
             </>
           }
@@ -201,8 +201,8 @@ export function SetupModalContent({
     }
 
     return effectiveSetupKey
-      ? "Install NetBird with Setup Key"
-      : "Install NetBird";
+      ? "Install Aheadscale with Setup Key"
+      : "Install Aheadscale";
   }, [
     isFirstRun,
     isInstallPage,
@@ -230,15 +230,15 @@ export function SetupModalContent({
             )}
           >
             {isUserDevice === false || effectiveSetupKey
-              ? "To get started, install and run NetBird with the setup key as a parameter."
-              : "To get started, install NetBird and log in with your email account."}
+              ? "To get started, install and run Aheadscale with the setup key as a parameter."
+              : "To get started, install Aheadscale and log in with your email account."}
           </Paragraph>
         </div>
       )}
 
       <Tabs
         defaultValue={String(
-          isUserDevice === false || setupKey ? OperatingSystem.LINUX : os,
+          isUserDevice === false || setupKey || ![OperatingSystem.LINUX, OperatingSystem.WINDOWS, OperatingSystem.APPLE].includes(os) ? OperatingSystem.LINUX : os,
         )}
       >
         <TabsList justify={tabAlignment} className={"pt-2 px-3"}>
@@ -451,7 +451,7 @@ export const ManagementUrlStep = ({ trayName }: ManagementUrlStepProps) => {
   return (
     <>
       <p>
-        On first launch, NetBird asks where to connect. Select{" "}
+        On first launch, Aheadscale asks where to connect. Select{" "}
         <Mark>Self-hosted</Mark> and enter the following{" "}
         <Mark>Management server URL</Mark>
       </p>
@@ -459,7 +459,7 @@ export const ManagementUrlStep = ({ trayName }: ManagementUrlStepProps) => {
         <Code.Line>{GRPC_API_ORIGIN}</Code.Line>
       </Code>
       <p className={"mt-2 text-xs text-nb-gray-300 font-normal"}>
-        Already past that screen? Click the NetBird icon in your {trayName},
+        Already past that screen? Click the Aheadscale icon in your {trayName},
         open <Mark>Settings</Mark> and set <Mark>Management Server</Mark> to{" "}
         <Mark>Self-hosted</Mark> under <Mark>General</Mark>.
       </p>

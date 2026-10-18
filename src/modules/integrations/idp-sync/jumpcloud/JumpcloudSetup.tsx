@@ -189,9 +189,9 @@ export function SetupContent({ onSuccess, onClose }: ModalProps) {
 
       <IntegrationModalHeader
         image={integrationImage}
-        title={"Connect NetBird with Jumpcloud"}
+        title={"Connect Aheadscale with Jumpcloud"}
         description={
-          "Start syncing your users and groups from Jumpcloud to NetBird. Follow the steps below to get started."
+          "Start syncing your users and groups from Jumpcloud to Aheadscale. Follow the steps below to get started."
         }
       />
 
@@ -344,7 +344,7 @@ export function SetupContent({ onSuccess, onClose }: ModalProps) {
             <Steps.Step step={2}>
               <p className={"font-normal"}>
                 Go to <Mark>{"SSO Applications"}</Mark> and select your{" "}
-                <Mark>NetBird</Mark> application, and then select{" "}
+                <Mark>Aheadscale</Mark> application, and then select{" "}
                 <Mark>Identity Management</Mark> tab.
               </p>
             </Steps.Step>

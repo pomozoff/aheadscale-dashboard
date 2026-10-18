@@ -43,7 +43,7 @@ export default function IdentityProviderTab() {
         <h1>Identity Provider Sync</h1>
         <Paragraph>
           Configure your preferred Identity Provider (IdP) to synchronize your
-          users and groups to NetBird.
+          users and groups to Aheadscale.
         </Paragraph>
         <Paragraph>
           <InlineLink

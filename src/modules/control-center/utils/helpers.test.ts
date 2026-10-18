@@ -71,7 +71,7 @@ const makePolicy = (
 });
 
 describe("getIpPlaceholderFromRange", () => {
-  it("falls back to the NetBird default range", () => {
+  it("falls back to the Aheadscale default range", () => {
     expect(getIpPlaceholderFromRange(undefined)).toBe("100.x.x.x");
     expect(getIpPlaceholderFromRange("")).toBe("100.x.x.x");
   });

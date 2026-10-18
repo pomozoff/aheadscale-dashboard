@@ -411,7 +411,7 @@ export function AgentConnectTabs({
               `model_provider = "netbird"`,
               ``,
               `[model_providers.netbird]`,
-              `name = "NetBird"`,
+              `name = "Aheadscale"`,
               `base_url = "${openaiBase}"`,
               `wire_api = "responses"`,
             ]}
@@ -425,7 +425,7 @@ export function AgentConnectTabs({
             // Kimi CLI reads providers from ~/.kimi/config.toml. Unlike
             // Claude Code, its "anthropic" provider type needs the bare
             // endpoint — no /anthropic prefix in base_url; api_key is a
-            // placeholder since NetBird injects the real key server-side.
+            // placeholder since Aheadscale injects the real key server-side.
             title={
               <>
                 Add to <ConfigPath path={"~/.kimi/config.toml"} />
@@ -474,7 +474,7 @@ export function AgentConnectTabs({
               ``,
               `client.chat.completions.create(`,
               `    model="gpt-5.5",`,
-              `    messages=[{"role": "user", "content": "What is NetBird Agent Network?"}],`,
+              `    messages=[{"role": "user", "content": "What is Aheadscale Agent Network?"}],`,
               `)`,
             ]}
           />
@@ -492,11 +492,11 @@ export function AgentConnectTabs({
               `  -d '{`,
               `    "model": "gpt-5.5",`,
               `    "messages": [`,
-              `      { "role": "user", "content": "What is NetBird Agent Network?" }`,
+              `      { "role": "user", "content": "What is Aheadscale Agent Network?" }`,
               `    ]`,
               `  }'`,
             ]}
-            copyText={`curl ${openaiBase}/chat/completions -H "Content-Type: application/json" -d '{"model":"gpt-5.5","messages":[{"role":"user","content":"What is NetBird Agent Network?"}]}'`}
+            copyText={`curl ${openaiBase}/chat/completions -H "Content-Type: application/json" -d '{"model":"gpt-5.5","messages":[{"role":"user","content":"What is Aheadscale Agent Network?"}]}'`}
           />
         </div>
       </TabsContent>

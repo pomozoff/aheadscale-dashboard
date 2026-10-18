@@ -1057,7 +1057,7 @@ function resolveProviderDisplay(
       key: "unknown",
       name: "Unknown",
       resolved: false,
-      hint: "Not attributed to a provider. The request was rejected before NetBird recognised it as an LLM call.",
+      hint: "Not attributed to a provider. The request was rejected before Aheadscale recognised it as an LLM call.",
     };
   }
 

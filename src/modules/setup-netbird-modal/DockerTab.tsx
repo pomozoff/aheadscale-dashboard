@@ -55,7 +55,7 @@ export default function DockerTab({
           )}
           <Steps.Step step={2 + offset}>
             <p>
-              Run NetBird container
+              Run Aheadscale container
               {showSetupKeyInfo && <RoutingPeerSetupKeyInfo />}
             </p>
             <Code>
@@ -96,7 +96,7 @@ export default function DockerTab({
               passHref={true}
               target={"_blank"}
             >
-              Running NetBird in Docker
+              Running Aheadscale in Docker
             </InlineLink>
           </Steps.Step>
         </Steps>

@@ -224,9 +224,9 @@ export function GenericHTTPModalContent({
         title={
           stream
             ? "Generic HTTP Configuration"
-            : "Connect NetBird with Generic HTTP"
+            : "Connect Aheadscale with Generic HTTP"
         }
-        description={`Start streaming your NetBird audit & traffic events to a Generic HTTP endpoint. ${
+        description={`Start streaming your Aheadscale audit & traffic events to a Generic HTTP endpoint. ${
           stream ? "" : "Follow the steps to get started."
         }`}
       />

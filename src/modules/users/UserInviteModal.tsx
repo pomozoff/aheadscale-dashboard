@@ -287,7 +287,7 @@ export function UserInviteModalContent({
     if (isCloud)
       return "Invite a user to your network and set their permissions.";
     if (mode === "create") {
-      return "Create a NetBird user account with email and password.";
+      return "Create a Aheadscale user account with email and password.";
     }
     return "Generate an invite link that the user can use to set their own password.";
   };

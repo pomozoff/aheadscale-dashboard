@@ -280,14 +280,14 @@ const RegistrationCheck = ({
         <>
           <CheckCircle2 size={16} className={"text-green-500 shrink-0"} />
           <span className={"text-nb-gray-100"}>
-            Proxy registered with NetBird and connected.
+            Proxy registered with Aheadscale and connected.
           </span>
         </>
       ) : (
         <>
           <Loader2 size={16} className={"animate-spin shrink-0"} />
           <span className={"text-nb-gray-300"}>
-            Waiting for the proxy to register with NetBird...
+            Waiting for the proxy to register with Aheadscale...
           </span>
         </>
       )}
@@ -297,7 +297,7 @@ const RegistrationCheck = ({
 
 // DeploySuccess shows the deployment result: the DNS records to create for
 // the new instance IP and a live check that the proxy registered with the
-// NetBird management service.
+// Aheadscale management service.
 const DeploySuccess = ({
   resourceLabel,
   name,
@@ -541,7 +541,7 @@ const HetznerDeploy = ({
             content={
               <>
                 The token goes straight from your browser to Hetzner and never
-                touches NetBird&apos;s servers, and you can delete it once setup
+                touches Aheadscale&apos;s servers, and you can delete it once setup
                 succeeds.{" "}
                 <InlineLink
                   href={
@@ -556,7 +556,7 @@ const HetznerDeploy = ({
           />
         </Label>
         <HelpText>
-          Create a read &amp; write API token. It is never stored by NetBird.
+          Create a read &amp; write API token. It is never stored by Aheadscale.
         </HelpText>
         <Input
           type={"password"}
@@ -803,7 +803,7 @@ const DigitalOceanDeploy = ({
                 <span className={"font-mono text-netbird"}>droplet</span>, and{" "}
                 <span className={"font-mono text-netbird"}>reserved_ip</span>{" "}
                 only. The token goes straight from your browser to DigitalOcean
-                and never touches NetBird&apos;s servers, and you can delete it
+                and never touches Aheadscale&apos;s servers, and you can delete it
                 once setup succeeds.{" "}
                 <InlineLink
                   href={
@@ -818,7 +818,7 @@ const DigitalOceanDeploy = ({
           />
         </Label>
         <HelpText>
-          Create a token with write access. It is never stored by NetBird.
+          Create a token with write access. It is never stored by Aheadscale.
         </HelpText>
         <Input
           type={"password"}

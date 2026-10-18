@@ -1,0 +1,10 @@
+# Build the static export first with Node 24.19.0: npm ci && npm run build.
+ARG BASE_IMAGE=netbirdio/dashboard:v2.94.0
+FROM ${BASE_IMAGE}
+COPY out/ /usr/share/nginx/html/
+COPY --chmod=755 docker/init_react_envs.sh /usr/local/init_react_envs.sh
+LABEL org.opencontainers.image.source="https://github.com/pomozoff/aheadscale-dashboard" org.opencontainers.image.title="Aheadscale Dashboard"
+
+# Apply runtime addresses before nginx can serve any client bundle.
+ENTRYPOINT ["/usr/local/init_react_envs.sh"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]

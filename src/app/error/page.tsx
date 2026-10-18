@@ -77,7 +77,7 @@ export default function ErrorPage() {
 
   const getDescription = () => {
     if (isBlockedUser) {
-      return "Your access has been blocked by the NetBird account administrator, possibly due to new user approval requirements or security policies. Please contact your administrator to regain access.";
+      return "Your access has been blocked by the Aheadscale account administrator, possibly due to new user approval requirements or security policies. Please contact your administrator to regain access.";
     }
     return "An error occurred while trying to access the dashboard. Please try again or contact your administrator.";
   };

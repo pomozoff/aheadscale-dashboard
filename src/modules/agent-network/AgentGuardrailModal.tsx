@@ -484,7 +484,7 @@ function PromptCaptureContent({ onConfirm }: { onConfirm: () => void }) {
     <>
       <div className={"flex flex-col px-8 gap-3 pb-6"}>
         <div className={"text-sm text-nb-gray-300"}>
-          NetBird redacts emails, SSN-shaped, phone-shaped, and credit-card
+          Aheadscale redacts emails, SSN-shaped, phone-shaped, and credit-card
           patterns before storing the prompt body. Enabling this guardrail adds
           strict redaction on top of the proxy&apos;s built-in token redaction.
         </div>

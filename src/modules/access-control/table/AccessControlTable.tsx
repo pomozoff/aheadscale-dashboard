@@ -304,7 +304,7 @@ export default function AccessControlTable({
       { value: "tcp", label: "TCP" },
       { value: "udp", label: "UDP" },
       { value: "icmp", label: "ICMP" },
-      { value: "netbird-ssh", label: "NetBird SSH" },
+      { value: "netbird-ssh", label: "Aheadscale SSH" },
     ],
     [],
   );
@@ -636,7 +636,7 @@ export default function AccessControlTable({
                 <FullTooltip
                   content={
                     <div className={"max-w-sm text-xs"}>
-                      Show temporary policies created by the NetBird browser
+                      Show temporary policies created by the Aheadscale browser
                       client. These policies are ephemeral and will be deleted
                       automatically after a short period of time.
                     </div>

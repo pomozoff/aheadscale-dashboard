@@ -377,6 +377,13 @@ export default function Navigation({
                   label="Documentation"
                   visible={true}
                 />
+                <SidebarItem
+                  icon={<DocsIcon />}
+                  href={"https://github.com/pomozoff/aheadscale-dashboard"}
+                  target={"_blank"}
+                  label="Source code"
+                  visible={true}
+                />
               </SidebarItemGroup>
             </div>
             <NavigationUsageInfo />

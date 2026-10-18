@@ -45,8 +45,8 @@ export default function DangerZoneTab({ account }: Props) {
     });
 
     notify({
-      title: "Delete NetBird account",
-      description: "NetBird account was successfully deleted.",
+      title: "Delete Aheadscale account",
+      description: "Aheadscale account was successfully deleted.",
       promise: deletePromise,
       loadingMessage: "Deleting the account...",
     });
@@ -54,9 +54,9 @@ export default function DangerZoneTab({ account }: Props) {
 
   const handleConfirm = async () => {
     const choice = await confirm({
-      title: "Delete NetBird account",
+      title: "Delete Aheadscale account",
       description:
-        "Are you sure you want to delete your NetBird account? This action cannot be undone.",
+        "Are you sure you want to delete your Aheadscale account? This action cannot be undone.",
       confirmText: "Delete",
       cancelText: "Cancel",
       type: "danger",
@@ -90,7 +90,7 @@ export default function DangerZoneTab({ account }: Props) {
           >
             <div className={"px-8 py-6"}>
               <p className={"text-xl font-medium mb-2 !text-red-50"}>
-                Delete NetBird account
+                Delete Aheadscale account
               </p>
               <p className={"!text-red-50/80"}>
                 Before proceeding to delete your Netbird account, please be

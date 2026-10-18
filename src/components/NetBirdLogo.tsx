@@ -26,14 +26,14 @@ export const NetBirdLogo = ({ size = "default", mobile = true }: Props) => {
       <Image
         src={NetBirdLogoFull}
         height={sizes[size].desktop}
-        alt={"NetBird Logo"}
+        alt={"Aheadscale Logo"}
         className={cn(mobile && "hidden md:block")}
       />
       {mobile && (
         <Image
           src={NetBirdLogoMark}
           width={sizes[size].mobile}
-          alt={"NetBird Logo"}
+          alt={"Aheadscale Logo"}
           className={cn(mobile && "md:hidden ml-4")}
         />
       )}

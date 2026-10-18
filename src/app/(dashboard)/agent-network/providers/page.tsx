@@ -104,7 +104,7 @@ export default function AgentNetworkProvidersPage() {
             <Paragraph>
               Connect AI providers and gateways like LiteLLM, OpenAI, and
               Anthropic through one keyless endpoint, accessible only via
-              NetBird’s tunnel.
+              Aheadscale’s tunnel.
               <InlineLink
                 href={"https://docs.netbird.io/agent-network/providers"}
                 target={"_blank"}

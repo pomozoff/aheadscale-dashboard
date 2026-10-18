@@ -63,7 +63,7 @@ export const SelectUserNode = ({ data, id }: UserNodeProps) => {
                       }
                     >
                       <TextWithTooltip
-                        text={user?.email || "NetBird"}
+                        text={user?.email || "Aheadscale"}
                         maxChars={20}
                       />
                     </span>

@@ -314,7 +314,7 @@ export function RoutingPeerModalContent({
               <div>
                 <Label>{"Don't have a routing peer?"}</Label>
                 <HelpText className={""}>
-                  You can install NetBird with a setup key on one or more
+                  You can install Aheadscale with a setup key on one or more
                   machines to act as routing peers.
                 </HelpText>
               </div>
@@ -459,7 +459,7 @@ const InstallNetBirdWithSetupKeyButton = ({
     const choice = await confirm({
       title: `Create a Setup Key?`,
       description:
-        "If you continue, a one-off setup key will be automatically created and you will be able to install NetBird.",
+        "If you continue, a one-off setup key will be automatically created and you will be able to install Aheadscale.",
       confirmText: "Continue",
       cancelText: "Cancel",
       type: "default",
@@ -504,7 +504,7 @@ const InstallNetBirdWithSetupKeyButton = ({
         ) : (
           <DownloadIcon size={14} />
         )}
-        Install NetBird
+        Install Aheadscale
       </Button>
       {setupKey && (
         <Modal

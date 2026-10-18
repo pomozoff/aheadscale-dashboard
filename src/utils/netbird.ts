@@ -4,7 +4,7 @@ const config = loadConfig();
 export const GRPC_API_ORIGIN = config.grpcApiOrigin;
 
 export const getNetBirdUpCommand = () => {
-  let cmd = "netbird up";
+  let cmd = "aheadscale up";
   if (GRPC_API_ORIGIN) {
     cmd += " --management-url " + GRPC_API_ORIGIN;
   }
@@ -47,7 +47,7 @@ export const testEditionOverride = (): Edition | undefined => {
   return undefined;
 };
 
-// isNetBirdCloud returns true when the dashboard runs on the NetBird-managed
+// isNetBirdCloud returns true when the dashboard runs on the Aheadscale-managed
 // cloud infrastructure (billing, MSP, trial, hosted integrations).
 // The hostname fallback keeps deployments without NETBIRD_CLOUD working.
 export const isNetBirdCloud = () => {
@@ -99,11 +99,15 @@ export const isAgentNetworkOnly = () => {
   return config.agentNetworkOnly;
 };
 
-// pkgsDownloadUrl builds a NetBird client installer download link on
+// pkgsDownloadUrl builds a Aheadscale client installer download link on
 // pkgs.netbird.io. `path` is the platform path without a
 // leading slash, e.g. "windows/x64" or "macos/universal".
-export const pkgsDownloadUrl = (path: string) =>
-  `https://pkgs.netbird.io/${path}`;
+export const pkgsDownloadUrl = (path: string) => {
+  const root = "https://github.com/pomozoff/aheadscale-client/actions/runs/";
+  if (path.startsWith("windows")) return root + (path.includes("arm64") ? "39057470367/artifacts/12110266402" : "39022500060/artifacts/12097407780");
+  if (path.startsWith("linux")) return root + (path.includes("arm64") ? "39057470367/artifacts/12110336451" : "39022500060/artifacts/12097097442");
+  return root + "39022500060/artifacts/12096949045";
+};
 
 // isAgentNetworkEnabled returns true when the Agent Network product surface
 // (Providers, Policies, Usage & Logs) is available — in either the dedicated

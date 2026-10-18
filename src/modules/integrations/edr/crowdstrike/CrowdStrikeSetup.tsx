@@ -123,7 +123,7 @@ export function SetupContent({ onSuccess, account }: ModalProps) {
 
     notify({
       title: "CrowdStrike Integration",
-      description: `CrowdStrike was successfully connected to NetBird.`,
+      description: `CrowdStrike was successfully connected to Aheadscale.`,
       promise: falconRequest({
         client_id: clientId,
         secret: secret,
@@ -177,7 +177,7 @@ export function SetupContent({ onSuccess, account }: ModalProps) {
 
       <IntegrationModalHeader
         image={integrationImage}
-        title={"Connect NetBird with CrowdStrike"}
+        title={"Connect Aheadscale with CrowdStrike"}
         description={
           "Restrict network access only to devices managed by the company's IT department"
         }
@@ -224,7 +224,7 @@ export function SetupContent({ onSuccess, account }: ModalProps) {
             <Steps.Step step={2}>
               <p className={"font-normal"}>
                 Click <Mark>Create API client</Mark> and enter
-                <Mark copy>NetBird</Mark>
+                <Mark copy>Aheadscale</Mark>
                 as the client name and select <Mark>Hosts (Read)</Mark> and{" "}
                 <Mark>Zero Trust Assessment (Read)</Mark> as the scope
               </p>

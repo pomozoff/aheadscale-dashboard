@@ -68,13 +68,13 @@ const ListItem = ({ userId }: Props) => {
       label={
         <>
           <ShieldCheckIcon size={16} />
-          NetBird MFA
+          Aheadscale MFA
           <FullTooltip
             variant={"lighter"}
             content={
               <div className={"text-xs max-w-xs"}>
-                NetBird MFA is primarily intended for users who log in with
-                email and password. You may not need NetBird MFA if your SSO
+                Aheadscale MFA is primarily intended for users who log in with
+                email and password. You may not need Aheadscale MFA if your SSO
                 provider (e.g., Google, Microsoft) already has MFA enabled.{" "}
                 <InlineLink
                   href={

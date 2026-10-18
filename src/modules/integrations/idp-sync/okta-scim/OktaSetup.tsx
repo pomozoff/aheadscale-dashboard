@@ -160,9 +160,9 @@ export function SetupContent({
 
       <IntegrationModalHeader
         image={integrationImage}
-        title={"Connect NetBird with Okta"}
+        title={"Connect Aheadscale with Okta"}
         description={
-          "Start syncing your users and groups from Okta to NetBird. Follow the steps below to get started."
+          "Start syncing your users and groups from Okta to Aheadscale. Follow the steps below to get started."
         }
       />
 
@@ -239,7 +239,7 @@ export function SetupContent({
               <p className={"font-normal"}>
                 Access the Okta dashboard and navigate to{" "}
                 <Mark>{"Applications > Applications"}</Mark>, selecting the
-                previously installed <Mark>NetBird</Mark> application
+                previously installed <Mark>Aheadscale</Mark> application
               </p>
             </Steps.Step>
             <Steps.Step step={2}>
@@ -264,14 +264,14 @@ export function SetupContent({
         <div className={"px-8 py-3 flex flex-col gap-0 mt-4"}>
           <p className={"font-medium flex gap-3 items-center text-base"}>
             <Share2 size={20} />
-            Enable Okta SCIM in NetBird
+            Enable Okta SCIM in Aheadscale
           </p>
           <Steps>
             <Steps.Step step={1}>
               <p>
                 From the Okta dashboard, navigate to{" "}
                 <Mark>{"Applications > Applications"}</Mark> and select the{" "}
-                <Mark>NetBird</Mark> application
+                <Mark>Aheadscale</Mark> application
               </p>
             </Steps.Step>
             <Steps.Step step={2}>
@@ -304,7 +304,7 @@ export function SetupContent({
         <div className={"px-8 py-3 flex flex-col gap-0 mt-4"}>
           <p className={"font-medium flex gap-3 items-center text-base"}>
             <Box size={20} />
-            Configure SCIM provisioning to NetBird
+            Configure SCIM provisioning to Aheadscale
           </p>
           <Steps>
             <Steps.Step step={1}>
@@ -329,7 +329,7 @@ export function SetupContent({
         <div className={"px-8 py-3 flex flex-col gap-0 mt-4"}>
           <p className={"font-medium flex gap-3 items-center text-base"}>
             <UserCircle size={20} />
-            Sync Users to NetBird
+            Sync Users to Aheadscale
           </p>
           <Steps>
             <Steps.Step step={1}>
@@ -349,7 +349,7 @@ export function SetupContent({
               <p className={"font-normal"}>
                 Select <Mark>Done</Mark> after you have finished assigning
                 groups. At this point, all members of the groups assigned to the
-                application will be synced to NetBird.
+                application will be synced to Aheadscale.
               </p>
             </Steps.Step>
           </Steps>
@@ -360,7 +360,7 @@ export function SetupContent({
         <div className={"px-8 py-3 flex flex-col gap-0 mt-4"}>
           <p className={"font-medium flex gap-3 items-center text-base"}>
             <FolderGit2 size={20} />
-            Sync Groups to NetBird
+            Sync Groups to Aheadscale
           </p>
           <Steps>
             <Steps.Step step={1}>
@@ -374,7 +374,7 @@ export function SetupContent({
             <Steps.Step step={2} line={false}>
               <p className={"font-normal"}>
                 Search groups to push and then click <Mark>Save</Mark>. The
-                selected groups will then be synced to NetBird.
+                selected groups will then be synced to Aheadscale.
               </p>
             </Steps.Step>
           </Steps>
@@ -473,9 +473,9 @@ export function SetupSSOContent() {
 
       <IntegrationModalHeader
         image={integrationImage}
-        title={"Connect NetBird with Okta"}
+        title={"Connect Aheadscale with Okta"}
         description={
-          "Start syncing your users and groups from Okta to NetBird. Follow the steps below to get started."
+          "Start syncing your users and groups from Okta to Aheadscale. Follow the steps below to get started."
         }
       />
 
@@ -536,7 +536,7 @@ export function SetupSSOContent() {
         <div className={"px-8 py-3 flex flex-col gap-0 mt-4"}>
           <p className={"font-medium flex gap-3 items-center text-base"}>
             <Box size={20} />
-            Install NetBird application for Okta
+            Install Aheadscale application for Okta
           </p>
           <Steps>
             <Steps.Step step={1}>
@@ -572,7 +572,7 @@ export function SetupSSOContent() {
         <div className={"px-8 py-3 flex flex-col gap-0 mt-4"}>
           <p className={"font-medium flex gap-3 items-center text-base"}>
             <MailIcon size={20} />
-            Share your Okta details with NetBird
+            Share your Okta details with Aheadscale
           </p>
           <Steps>
             <Steps.Step step={1}>
@@ -591,14 +591,14 @@ export function SetupSSOContent() {
               <p className={"font-normal"}>
                 Share your <Mark>Client ID</Mark> <Mark>Client secret</Mark>{" "}
                 <Mark>Okta account domain</Mark> and your {"user's"}
-                <Mark>Primary email domain</Mark> with the NetBird team
+                <Mark>Primary email domain</Mark> with the Aheadscale team
               </p>
             </Steps.Step>
             <Steps.Step step={4} line={false}>
               <p className={"font-normal"}>
-                Once the NetBird team has enabled the authentication for your
+                Once the Aheadscale team has enabled the authentication for your
                 account you will receive an email. After that you can visit{" "}
-                <InlineLink href={"https://app.netbird.io"}>
+                <InlineLink href={"https://aheadscale.ru"}>
                   app.netbird.io
                 </InlineLink>{" "}
                 and authenticate using your Okta’s credentials
@@ -622,7 +622,7 @@ export function SetupSSOContent() {
                   1Password
                 </InlineLink>{" "}
                 or any other secure sharing tool to share your Okta details with
-                the NetBird team. If you need help, please contact us at{" "}
+                the Aheadscale team. If you need help, please contact us at{" "}
                 <InlineLink
                   href={"mailto:support@netbird.io"}
                   className={"inline !text-netbird-500 font-medium"}

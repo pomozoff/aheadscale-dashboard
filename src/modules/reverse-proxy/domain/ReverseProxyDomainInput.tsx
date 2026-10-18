@@ -72,7 +72,7 @@ export default function ReverseProxyDomainInput({
             Cluster {clusterOffline.clusterName} is offline. Please try again in
             a few minutes. If the issue persists, check{" "}
             <InlineLink href={"https://status.netbird.io/"} target={"_blank"}>
-              NetBird Status
+              Aheadscale Status
             </InlineLink>{" "}
             or reach out to{"  "}
             <InlineLink href={"mailto:support@netbird.io"}>
