@@ -102,7 +102,7 @@ const MspAccountModalContent = ({ setOpen, tenant, initialTab }: Props) => {
   const domainInputError = useMemo(() => {
     if (domain === "") return "";
     if (!validator.isValidDomain(domain)) {
-      return "Please enter a valid domain, e.g. netbird.io";
+      return "Please enter a valid domain, e.g. aheadscale.ru";
     }
     return "";
   }, [domain]);

@@ -9,8 +9,8 @@ import {
 import { Share2 } from "lucide-react";
 import React, { useMemo } from "react";
 import { Policy } from "@/interfaces/Policy";
-import EmptyRow from "@/modules/common-table-rows/EmptyRow";
 import { parsePortsToStrings } from "@/modules/access-control/useAccessControl";
+import EmptyRow from "@/modules/common-table-rows/EmptyRow";
 
 // AccessControlProtoPortsCell — single column combining the protocol
 // and ports indicators. Protocol is always shown. Ports rendering:
@@ -37,10 +37,7 @@ export default function AccessControlProtoPortsCell({
   const isNetBirdSSH = rule.protocol?.toLowerCase() === "netbird-ssh";
   const protocolLabel = isNetBirdSSH ? "NB-SSH" : rule.protocol;
   const protocolBadge = (
-    <Badge
-      variant={"gray"}
-      className={"uppercase tracking-wider font-medium"}
-    >
+    <Badge variant={"gray"} className={"uppercase tracking-wider font-medium"}>
       <Share2 size={12} />
       {protocolLabel}
     </Badge>
@@ -52,7 +49,7 @@ export default function AccessControlProtoPortsCell({
         <FullTooltip
           interactive={false}
           content={
-            <span className={"text-xs text-nb-gray-100"}>NETBIRD-SSH</span>
+            <span className={"text-xs text-nb-gray-100"}>Aheadscale SSH</span>
           }
         >
           <span className={"cursor-help"}>{protocolBadge}</span>

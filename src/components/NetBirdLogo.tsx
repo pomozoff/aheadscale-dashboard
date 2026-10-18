@@ -1,8 +1,7 @@
 import { cn } from "@utils/helpers";
 import Image from "next/image";
 import * as React from "react";
-import NetBirdLogoMark from "@/assets/netbird.svg";
-import NetBirdLogoFull from "@/assets/netbird-full.svg";
+import AheadscaleMark from "@/assets/aheadscale-mark.png";
 
 type Props = {
   size?: "default" | "large";
@@ -23,15 +22,24 @@ const sizes = {
 export const NetBirdLogo = ({ size = "default", mobile = true }: Props) => {
   return (
     <>
-      <Image
-        src={NetBirdLogoFull}
-        height={sizes[size].desktop}
-        alt={"Aheadscale Logo"}
-        className={cn(mobile && "hidden md:block")}
-      />
+      <span
+        className={cn(
+          "items-center gap-2 font-semibold tracking-tight text-white",
+          mobile ? "hidden md:inline-flex" : "inline-flex",
+        )}
+      >
+        <Image
+          src={AheadscaleMark}
+          width={sizes[size].desktop + 8}
+          height={sizes[size].desktop + 8}
+          alt=""
+          aria-hidden="true"
+        />
+        <span style={{ fontSize: sizes[size].desktop }}>Aheadscale</span>
+      </span>
       {mobile && (
         <Image
-          src={NetBirdLogoMark}
+          src={AheadscaleMark}
           width={sizes[size].mobile}
           alt={"Aheadscale Logo"}
           className={cn(mobile && "md:hidden ml-4")}

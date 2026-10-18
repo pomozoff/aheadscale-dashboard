@@ -103,16 +103,17 @@ export const MSPDomainVerificationModal = ({
               "bg-nb-gray-900/70 px-4 py-3 rounded-md border border-nb-gray-800/70 my-6 !text-nb-gray-300 text-sm"
             }
           >
-            If you do not have access to your DNS configuration, you can also
-            verify your domain by sending us an email to{" "}
+            If you cannot update your DNS configuration, contact{" "}
             <InlineLink
-              href={"mailto:support@netbird.io"}
+              href={
+                "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#поддержка"
+              }
               className={"inline font-medium"}
             >
               {" "}
-              support@netbird.io
+              Aheadscale Support
             </InlineLink>
-            . The email should be sent from the domain you are trying to verify.
+            .
           </div>
         </div>
         <ModalFooter className={"items-center"}>

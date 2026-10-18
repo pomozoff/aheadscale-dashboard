@@ -43,8 +43,8 @@ export const trialExpiresInfo: Announcement = {
   tag: "Trial",
   text: "Your trial is ending soon. Need more time? Contact us to extend your trial.",
   variant: "default", // "default" or "important"
-  link: "mailto:support@netbird.io",
-  linkText: "support@netbird.io",
+  link: "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#поддержка",
+  linkText: "Aheadscale Support",
   isExternal: false,
   closeable: false,
   isCloudOnly: true,

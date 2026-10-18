@@ -1,5 +1,6 @@
 import Button from "@components/Button";
 import { Callout } from "@components/Callout";
+import HelpText from "@components/HelpText";
 import InlineLink from "@components/InlineLink";
 import { Input } from "@components/Input";
 import { Label } from "@components/Label";
@@ -11,6 +12,11 @@ import {
 } from "@components/modal/Modal";
 import ModalHeader from "@components/modal/ModalHeader";
 import Paragraph from "@components/Paragraph";
+import {
+  SelectDropdown,
+  SelectOption,
+} from "@components/select/SelectDropdown";
+import Separator from "@components/Separator";
 import { validator } from "@utils/helpers";
 import { ExternalLinkIcon, GlobeIcon, ServerIcon } from "lucide-react";
 import * as React from "react";
@@ -21,13 +27,7 @@ import {
   REVERSE_PROXY_CUSTOM_DOMAINS_DOCS_LINK,
   ReverseProxyDomainType,
 } from "@/interfaces/ReverseProxy";
-import HelpText from "@components/HelpText";
-import Separator from "@components/Separator";
 import { isNetBirdCloud } from "@/utils/netbird";
-import {
-  SelectDropdown,
-  SelectOption,
-} from "@components/select/SelectDropdown";
 
 type Props = {
   open: boolean;
@@ -105,14 +105,20 @@ export const CustomDomainModal = ({
                 No proxy clusters are currently connected. Please try again in a
                 few minutes. If the issue persists, check{" "}
                 <InlineLink
-                  href={"https://status.netbird.io/"}
+                  href={
+                    "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#решение-проблем"
+                  }
                   target={"_blank"}
                 >
-                  Aheadscale Status
+                  Aheadscale troubleshooting
                 </InlineLink>{" "}
                 or reach out to{"  "}
-                <InlineLink href={"mailto:support@netbird.io"}>
-                  support@netbird.io
+                <InlineLink
+                  href={
+                    "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#поддержка"
+                  }
+                >
+                  Aheadscale Support
                 </InlineLink>
               </Callout>
             ) : (

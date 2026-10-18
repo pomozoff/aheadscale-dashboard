@@ -1,4 +1,5 @@
 import Breadcrumbs from "@components/Breadcrumbs";
+import { Callout } from "@components/Callout";
 import InlineLink from "@components/InlineLink";
 import Paragraph from "@components/Paragraph";
 import { SkeletonIntegration } from "@components/skeletons/SkeletonIntegration";
@@ -17,7 +18,6 @@ import { GoogleWorkspace } from "@/modules/integrations/idp-sync/google-workspac
 import { Jumpcloud } from "@/modules/integrations/idp-sync/jumpcloud/Jumpcloud";
 import { Okta } from "@/modules/integrations/idp-sync/okta-scim/Okta";
 import { useIntegrations } from "@/modules/integrations/idp-sync/useIntegrations";
-import { Callout } from "@components/Callout";
 
 export default function IdentityProviderTab() {
   const account = useAccount();
@@ -84,17 +84,21 @@ export default function IdentityProviderTab() {
               </>
             )}
           </div>
-            { isNetBirdCloud() && <Callout variant={"warning"} className={"max-w-lg mt-6"}>
-            Looking to enable a custom IdP like Keycloak? <br />
-            Please contact us at{" "}
-            <InlineLink
-              href={"mailto:support@netbird.io"}
-              className={"inline !text-netbird-500 font-medium"}
-            >
-              {" "}
-              support@netbird.io
-            </InlineLink>{" "}
-          </Callout>}
+          {isNetBirdCloud() && (
+            <Callout variant={"warning"} className={"max-w-lg mt-6"}>
+              Looking to enable a custom IdP like Keycloak? <br />
+              Please contact us at{" "}
+              <InlineLink
+                href={
+                  "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#поддержка"
+                }
+                className={"inline !text-netbird-500 font-medium"}
+              >
+                {" "}
+                Aheadscale Support
+              </InlineLink>{" "}
+            </Callout>
+          )}
         </LockedFeatureOverlay>
       </div>
     </Tabs.Content>

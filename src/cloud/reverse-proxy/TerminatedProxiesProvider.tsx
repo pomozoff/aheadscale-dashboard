@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
 import Badge from "@components/Badge";
 import FullTooltip from "@components/FullTooltip";
-import { AlertTriangle } from "lucide-react";
 import InlineLink from "@components/InlineLink";
+import { AlertTriangle } from "lucide-react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useReverseProxies } from "@/contexts/ReverseProxiesProvider";
 
 export function TerminatedProxiesProvider() {
@@ -50,10 +50,10 @@ const terminatedBadge = (
   <FullTooltip
     content={
       <div className={"text-xs max-w-xs"}>
-        This service has been terminated by the Aheadscale team as it violates the
-        Terms of Service. For questions, please contact{" "}
-        <InlineLink href="mailto:support@netbird.io?subject=Request%20for%20Assistance%3A%20Terminated%20Service">
-          support@netbird.io
+        This service has been terminated by the Aheadscale team as it violates
+        the Terms of Service. For questions, please contact{" "}
+        <InlineLink href="https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#поддержка">
+          Aheadscale Support
         </InlineLink>
       </div>
     }
@@ -73,9 +73,7 @@ function findAndDisableAll(proxyId: string) {
   let actionTd: HTMLElement | null = null;
 
   try {
-    row = document.querySelector<HTMLElement>(
-      `[data-row-id="${proxyId}"]`,
-    );
+    row = document.querySelector<HTMLElement>(`[data-row-id="${proxyId}"]`);
 
     if (row) {
       row.style.pointerEvents = "none";
@@ -93,7 +91,8 @@ function findAndDisableAll(proxyId: string) {
       }
     }
 
-    const mainStatusCell = row?.querySelector<HTMLElement>("[data-status-cell]");
+    const mainStatusCell =
+      row?.querySelector<HTMLElement>("[data-status-cell]");
     if (mainStatusCell) {
       statusCells.push(mainStatusCell);
       mainStatusCell.style.pointerEvents = "auto";

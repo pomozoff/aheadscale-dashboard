@@ -51,8 +51,8 @@ export const MSPTrialExpiredModal = () => {
 
   const mailToEmail =
     mspInfo?.reseller_status === "active"
-      ? "support@netbird.io"
-      : mspInfo?.parent_owner_email || "support@netbird.io";
+      ? undefined
+      : mspInfo?.parent_owner_email;
 
   return (
     <Modal open={true} onOpenChange={undefined}>
@@ -79,8 +79,8 @@ export const MSPTrialExpiredModal = () => {
           ) : (
             <div className={"text-sm text-nb-gray-300 text-center"}>
               Your account has reached the end of the free trial period. To
-              continue using Aheadscale, please contact your account administrator{" "}
-              <MSPName />.
+              continue using Aheadscale, please contact your account
+              administrator <MSPName />.
             </div>
           )}
         </div>
@@ -108,7 +108,11 @@ export const MSPTrialExpiredModal = () => {
               Logout
             </Button>
             <a
-              href={`mailto:${mailToEmail}?subject=Request%20for%20Assistance%3A%20Trial%20Expired`}
+              href={
+                mailToEmail
+                  ? `mailto:${mailToEmail}?subject=Request%20for%20Assistance%3A%20Trial%20Expired`
+                  : "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#поддержка"
+              }
               className={"w-full"}
             >
               <Button className={"w-full"} variant={"primary"}>

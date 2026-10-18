@@ -1,5 +1,7 @@
 import Button from "@components/Button";
+import { Callout } from "@components/Callout";
 import Card from "@components/Card";
+import InlineLink from "@components/InlineLink";
 import {
   Modal,
   ModalClose,
@@ -7,12 +9,12 @@ import {
   ModalFooter,
 } from "@components/modal/Modal";
 import ModalHeader from "@components/modal/ModalHeader";
+import Paragraph from "@components/Paragraph";
 import Steps from "@components/Steps";
 import { GradientFadedBackground } from "@components/ui/GradientFadedBackground";
 import { Mark } from "@components/ui/Mark";
 import { ExternalLinkIcon, GlobeIcon } from "lucide-react";
 import * as React from "react";
-import { Callout } from "@components/Callout";
 import { useReverseProxies } from "@/contexts/ReverseProxiesProvider";
 import {
   REVERSE_PROXY_CLUSTERS_DOCS_LINK,
@@ -20,8 +22,6 @@ import {
   ReverseProxyDomain,
   ReverseProxyDomainType,
 } from "@/interfaces/ReverseProxy";
-import Paragraph from "@components/Paragraph";
-import InlineLink from "@components/InlineLink";
 import { isNetBirdCloud } from "@/utils/netbird";
 
 type Props = {
@@ -85,14 +85,20 @@ export const CustomDomainVerificationModal = ({
                   No proxy clusters are currently connected. Please try again in
                   a few minutes. If the issue persists, check{" "}
                   <InlineLink
-                    href={"https://status.netbird.io/"}
+                    href={
+                      "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#решение-проблем"
+                    }
                     target={"_blank"}
                   >
-                    Aheadscale Status
+                    Aheadscale troubleshooting
                   </InlineLink>{" "}
                   or reach out to{"  "}
-                  <InlineLink href={"mailto:support@netbird.io"}>
-                    support@netbird.io
+                  <InlineLink
+                    href={
+                      "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#поддержка"
+                    }
+                  >
+                    Aheadscale Support
                   </InlineLink>
                 </Callout>
               ) : (
@@ -140,9 +146,9 @@ export const CustomDomainVerificationModal = ({
                 )}
 
                 <Callout variant={"warning"}>
-                  DNS changes may take some time to propagate. If Aheadscale does
-                  not find the record immediately, please wait up to 24 hours
-                  and try again.
+                  DNS changes may take some time to propagate. If Aheadscale
+                  does not find the record immediately, please wait up to 24
+                  hours and try again.
                 </Callout>
               </>
             )}

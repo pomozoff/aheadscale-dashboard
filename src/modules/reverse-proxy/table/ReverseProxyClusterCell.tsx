@@ -1,6 +1,8 @@
 "use client";
 
 import Badge from "@components/Badge";
+import FullTooltip from "@components/FullTooltip";
+import InlineLink from "@components/InlineLink";
 import { cn } from "@utils/helpers";
 import { AlertTriangle, Globe, Server } from "lucide-react";
 import React from "react";
@@ -9,9 +11,7 @@ import {
   ReverseProxy,
   ReverseProxyDomainType,
 } from "@/interfaces/ReverseProxy";
-import FullTooltip from "@components/FullTooltip";
 import { isNetBirdCloud } from "@/utils/netbird";
-import InlineLink from "@components/InlineLink";
 
 type Props = {
   reverseProxy: ReverseProxy;
@@ -96,12 +96,21 @@ export default function ReverseProxyClusterCell({
           <div className={"text-xs max-w-xs"}>
             Cluster {reverseProxy.proxy_cluster} is offline. Please try again in
             a few minutes. If the issue persists, check{" "}
-            <InlineLink href={"https://status.netbird.io/"} target={"_blank"}>
-              Aheadscale Status
+            <InlineLink
+              href={
+                "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#решение-проблем"
+              }
+              target={"_blank"}
+            >
+              Aheadscale troubleshooting
             </InlineLink>{" "}
             or reach out to{"  "}
-            <InlineLink href={"mailto:support@netbird.io"}>
-              support@netbird.io
+            <InlineLink
+              href={
+                "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#поддержка"
+              }
+            >
+              Aheadscale Support
             </InlineLink>
           </div>
         ) : (

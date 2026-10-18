@@ -28,14 +28,14 @@ import {
   UserCircle,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { useEmbeddedIdentityProviders } from "@/hooks/useEmbeddedIdentityProviders";
 import integrationImage from "@/assets/integrations/okta.png";
+import { useEmbeddedIdentityProviders } from "@/hooks/useEmbeddedIdentityProviders";
 import { OktaIntegration } from "@/interfaces/IdentityProvider";
+import { EmbeddedIdentityProviderSelect } from "@/modules/integrations/idp-sync/EmbeddedIdentityProviderSelect";
 import oktaGroupsAssignments from "@/modules/integrations/idp-sync/okta-scim/images/okta-groups-assignments.png";
 import oktaSCIMToApp from "@/modules/integrations/idp-sync/okta-scim/images/okta-scim-to-app-sync-enabled.png";
 import oktaSSO from "@/modules/integrations/idp-sync/okta-scim/images/okta-sso-configuration.png";
 import oktaSyncGroups from "@/modules/integrations/idp-sync/okta-scim/images/okta-sync-groups.png";
-import { EmbeddedIdentityProviderSelect } from "@/modules/integrations/idp-sync/EmbeddedIdentityProviderSelect";
 import { IntegrationModalHeader } from "@/modules/integrations/IntegrationModalHeader";
 import { useEnterpriseConnections } from "@/modules/integrations/sso/useEnterpriseConnections";
 
@@ -615,7 +615,9 @@ export function SetupSSOContent() {
               <p className={"!text-netbird-200"}>
                 You can use{" "}
                 <InlineLink
-                  href={"mailto:support@netbird.io"}
+                  href={
+                    "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#поддержка"
+                  }
                   className={"inline !text-netbird-500 font-medium"}
                 >
                   {" "}
@@ -624,11 +626,13 @@ export function SetupSSOContent() {
                 or any other secure sharing tool to share your Okta details with
                 the Aheadscale team. If you need help, please contact us at{" "}
                 <InlineLink
-                  href={"mailto:support@netbird.io"}
+                  href={
+                    "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#поддержка"
+                  }
                   className={"inline !text-netbird-500 font-medium"}
                 >
                   {" "}
-                  support@netbird.io
+                  Aheadscale Support
                 </InlineLink>{" "}
               </p>
             </div>

@@ -41,7 +41,11 @@ export const LockedFeatureContent = ({
             size={isTooltip ? 12 : 14}
             className={cn("relative", isTooltip && "-top-[1px]")}
           />
-            { isNetBirdCloud()? (plan == "team" ? PLAN_TEXT.TEAM : PLAN_TEXT.BUSINESS) : PLAN_TEXT.ENTERPRISE }
+          {isNetBirdCloud()
+            ? plan == "team"
+              ? PLAN_TEXT.TEAM
+              : PLAN_TEXT.BUSINESS
+            : PLAN_TEXT.ENTERPRISE}
         </div>
         <div
           className={cn(
@@ -83,11 +87,12 @@ const AvailableOnPlanText = ({
   const teamOrBusiness =
     plan == "team" ? "Team plan or higher. " : "Business plan. ";
   if (!isNetBirdCloud()) {
-      return (
+    return (
       <>
-        {featureText} {isOrAre} available with a Aheadscale Enterprise commercial license, or on Aheadscale Cloud with the {teamOrBusiness}
+        {featureText} {isOrAre} available with a Aheadscale Enterprise
+        commercial license, or on Aheadscale Cloud with the {teamOrBusiness}
       </>
-      )
+    );
   }
 
   return (
@@ -112,10 +117,7 @@ const UpgradeOrTrialText = ({
   const { isOwnerOrAdmin } = useLoggedInUser();
 
   if (!isNetBirdCloud()) {
-    return (
-      <>
-      </>
-    );
+    return <></>;
   }
 
   if (hasReseller) {
@@ -145,13 +147,17 @@ const UpgradeOrTrialText = ({
 
 const GetMSPSupportButton = () => {
   const { mspInfo, hasReseller } = useMSP();
-  const mailToEmail = mspInfo?.parent_owner_email || "support@netbird.io";
+  const mailToEmail = mspInfo?.parent_owner_email;
   if (hasReseller) return;
 
   return (
     <div className={"relative top-1 min-w-[160px]"}>
       <a
-        href={`mailto:${mailToEmail}?subject=Request%20for%20Assistance%3A%20Upgrade%20Plan`}
+        href={
+          mailToEmail
+            ? `mailto:${mailToEmail}?subject=Request%20for%20Assistance%3A%20Upgrade%20Plan`
+            : "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#поддержка"
+        }
         className={"w-full"}
       >
         <Button

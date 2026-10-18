@@ -17,16 +17,16 @@ import {
   UserCircle,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { useEmbeddedIdentityProviders } from "@/hooks/useEmbeddedIdentityProviders";
 import Skeleton from "react-loading-skeleton";
 import { useSWRConfig } from "swr";
 import integrationImage from "@/assets/integrations/generic-scim.png";
+import { useEmbeddedIdentityProviders } from "@/hooks/useEmbeddedIdentityProviders";
 import {
   IdentityProvider,
   ScimIntegration,
 } from "@/interfaces/IdentityProvider";
-import { GenericSCIMProps } from "@/modules/integrations/idp-sync/generic-scim/GenericSCIM";
 import { EmbeddedIdentityProviderSelect } from "@/modules/integrations/idp-sync/EmbeddedIdentityProviderSelect";
+import { GenericSCIMProps } from "@/modules/integrations/idp-sync/generic-scim/GenericSCIM";
 import { GroupPrefixHelpText } from "@/modules/integrations/idp-sync/GroupPrefixHelpText";
 import { GroupPrefixInput } from "@/modules/integrations/idp-sync/GroupPrefixInput";
 import { IntegrationModalHeader } from "@/modules/integrations/IntegrationModalHeader";
@@ -169,7 +169,10 @@ export function SetupContent({
 
   return (
     <ModalContent
-      maxWidthClass={cn("relative", step === -1 ? "max-w-lg" : maxWidthClasses[step])}
+      maxWidthClass={cn(
+        "relative",
+        step === -1 ? "max-w-lg" : maxWidthClasses[step],
+      )}
       showClose={true}
       className={""}
       onEscapeKeyDown={(e) => step > 0 && e.preventDefault()}
@@ -234,10 +237,10 @@ export function SetupContent({
               className={"inline"}
               target={"_blank"}
               href={
-                "mailto:support@netbird.io?subject=Request%20for%20Assistance%3A%20Custom%20Identity%20Provider"
+                "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md#поддержка"
               }
             >
-              support@netbird.io
+              Aheadscale Support
             </InlineLink>
           </p>
           {!genericConnection && !isSSOLoading && isAuth0() && (

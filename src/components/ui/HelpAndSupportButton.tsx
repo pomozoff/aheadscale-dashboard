@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@components/Button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,34 +10,45 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@components/DropdownMenu";
+import { cn } from "@utils/helpers";
 import {
   ArrowUpRightIcon,
   BookText,
   CircleQuestionMark,
-  MailIcon,
-  MessageSquareShare,
-  MessagesSquareIcon,
+  Github,
   TriangleAlert,
 } from "lucide-react";
 import { useState } from "react";
-import Button from "@components/Button";
-import { cn } from "@utils/helpers";
-import SlackIcon from "@/assets/icons/SlackIcon";
-import { isNetBirdCloud } from "@utils/netbird";
+
+const guide =
+  "https://github.com/pomozoff/aheadscale-client/blob/aheadscale/docs/aheadscale/user-guide.md";
+const links = [
+  { href: guide, label: "Помощь Aheadscale", icon: BookText },
+  {
+    href: guide + "#решение-проблем",
+    label: "Решение проблем",
+    icon: TriangleAlert,
+  },
+  {
+    href: "https://github.com/pomozoff/aheadscale-client",
+    label: "Исходный код Aheadscale",
+    icon: Github,
+  },
+];
 
 export default function HelpAndSupportButton() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
   return (
     <DropdownMenu
       modal={false}
       open={dropdownOpen}
       onOpenChange={setDropdownOpen}
     >
-      <DropdownMenuTrigger asChild={true}>
+      <DropdownMenuTrigger asChild>
         <Button
-          size={"xs"}
-          variant={"default-outline"}
+          size="xs"
+          variant="default-outline"
+          aria-label="Помощь Aheadscale"
           className={cn(
             "!rounded-full h-[38px] w-[38px] !p-0",
             dropdownOpen && "text-white",
@@ -45,100 +57,28 @@ export default function HelpAndSupportButton() {
           <CircleQuestionMark size={18} />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56" align="end" forceMount>
+      <DropdownMenuContent className="w-64" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
-          <div className="flex flex-col space-y-1 px-1">
-            <div className="text-sm font-normal leading-none text-nb-gray-200 py-1">
-              Help and Support
-            </div>
-          </div>
+          Aheadscale
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem
-          href="https://docs.netbird.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-          asChild
-        >
-          <div className={"flex gap-3 items-center"}>
-            <BookText size={14} />
-            Documentation
-          </div>
-          <DropdownMenuShortcut>
-            <ArrowUpRightIcon size={16} />
-          </DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          href="https://docs.netbird.io/help/troubleshooting-client"
-          target="_blank"
-          rel="noopener noreferrer"
-          asChild
-        >
-          <div className={"flex gap-3 items-center"}>
-            <TriangleAlert size={14} />
-            Troubleshooting
-          </div>
-          <DropdownMenuShortcut>
-            <ArrowUpRightIcon size={16} />
-          </DropdownMenuShortcut>
-        </DropdownMenuItem>
-
-        {isNetBirdCloud() && (
-          <DropdownMenuItem href="mailto:support@netbird.io?subject=Support Request">
-            <div className={"flex gap-3 items-center"}>
-              <MailIcon size={14} />
-              support@netbird.io
+        {links.map(({ href, label, icon: Icon }) => (
+          <DropdownMenuItem
+            key={href}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            asChild
+          >
+            <div className="flex gap-3 items-center">
+              <Icon size={14} />
+              {label}
             </div>
+            <DropdownMenuShortcut>
+              <ArrowUpRightIcon size={16} />
+            </DropdownMenuShortcut>
           </DropdownMenuItem>
-        )}
-
-        <DropdownMenuSeparator />
-
-        <DropdownMenuItem
-          href="https://forum.netbird.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-          asChild
-        >
-          <div className={"flex gap-3 items-center"}>
-            <MessagesSquareIcon size={14} />
-            Aheadscale Forum
-          </div>
-          <DropdownMenuShortcut>
-            <ArrowUpRightIcon size={16} />
-          </DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          href="https://docs.netbird.io/slack-url"
-          target="_blank"
-          rel="noopener noreferrer"
-          asChild
-        >
-          <div className={"flex gap-3 items-center"}>
-            <SlackIcon size={14} />
-            Aheadscale Slack
-          </div>
-          <DropdownMenuShortcut>
-            <ArrowUpRightIcon size={16} />
-          </DropdownMenuShortcut>
-        </DropdownMenuItem>
-
-        <DropdownMenuSeparator />
-
-        <DropdownMenuItem
-          href={"https://forms.gle/TeLw2zrXEdw6RcQ36"}
-          target={"_blank"}
-          rel="noopener noreferrer"
-          asChild
-        >
-          <div className={"flex gap-3 items-center"}>
-            <MessageSquareShare size={14} />
-            Feedback
-          </div>
-          <DropdownMenuShortcut>
-            <ArrowUpRightIcon size={16} />
-          </DropdownMenuShortcut>
-        </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

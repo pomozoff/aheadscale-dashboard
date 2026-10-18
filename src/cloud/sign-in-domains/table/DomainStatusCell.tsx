@@ -8,7 +8,7 @@ type Props = {
 };
 
 const FAILED_HINT =
-  "This domain could not be verified. Check that the TXT record is published, then try again. If it keeps failing, contact support@netbird.io";
+  "This domain could not be verified. Check that the TXT record is published, then try again. If it keeps failing, contact Aheadscale Support";
 
 export default function DomainStatusCell({ domain }: Readonly<Props>) {
   const status = domain.validation_status;

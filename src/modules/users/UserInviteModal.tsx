@@ -16,20 +16,20 @@ import { SegmentedTabs } from "@components/SegmentedTabs";
 import { IconLink, IconMailForward, IconUserPlus } from "@tabler/icons-react";
 import { useApiCall } from "@utils/api";
 import { cn, validator } from "@utils/helpers";
+import { isNetBirdCloud } from "@utils/netbird";
 import { AlarmClock, CopyIcon, MailIcon, User2 } from "lucide-react";
 import Image from "next/image";
 import React, { useMemo, useState } from "react";
 import { useSWRConfig } from "swr";
-import useCopyToClipboard from "@/hooks/useCopyToClipboard";
 import Avatar1 from "@/assets/avatars/009.jpg";
 import Avatar2 from "@/assets/avatars/030.jpg";
 import Avatar3 from "@/assets/avatars/063.jpg";
 import Avatar4 from "@/assets/avatars/086.jpg";
+import useCopyToClipboard from "@/hooks/useCopyToClipboard";
 import { Group } from "@/interfaces/Group";
 import { Role, User, UserInvite } from "@/interfaces/User";
 import useGroupHelper from "@/modules/groups/useGroupHelper";
 import { UserRoleSelector } from "@/modules/users/UserRoleSelector";
-import { isNetBirdCloud } from "@utils/netbird";
 
 type UserCreationMode = "create" | "invite";
 
@@ -372,7 +372,7 @@ export function UserInviteModalContent({
                 <MailIcon size={16} className={"text-nb-gray-300"} />
               </div>
             }
-            placeholder={"hello@netbird.io"}
+            placeholder={"you@example.com"}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />

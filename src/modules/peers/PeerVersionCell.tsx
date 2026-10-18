@@ -1,3 +1,4 @@
+import FullTooltip from "@components/FullTooltip";
 import InlineLink from "@components/InlineLink";
 import {
   Tooltip,
@@ -14,7 +15,6 @@ import { useMemo } from "react";
 import { useApplicationContext } from "@/contexts/ApplicationProvider";
 import { OperatingSystem } from "@/interfaces/OperatingSystem";
 import { PeerOperatingSystemIcon } from "@/modules/peers/PeerOperatingSystemIcon";
-import FullTooltip from "@components/FullTooltip";
 
 type Props = {
   version: string;
@@ -80,8 +80,8 @@ export default function PeerVersionCell({
                   "text-neutral-300 flex flex-col gap-1 max-w-[300px] text-xs mt-1"
                 }
               >
-                A new version of Netbird is available. Please update your client
-                to get the latest features and bug fixes.
+                A new version of Aheadscale is available. Please update your
+                client to get the latest features and bug fixes.
               </div>
               <InlineLink
                 onClick={(e) => e.stopPropagation()}

@@ -236,9 +236,7 @@ function NetworkSettingsTabContent({ account }: Readonly<Props>) {
               </div>
               <div className={"w-full"}>
                 <Input
-                  placeholder={
-                    isNetBirdCloud() ? "netbird.cloud" : "netbird.selfhosted"
-                  }
+                  placeholder={"aheadscale.internal"}
                   errorTooltip={true}
                   errorTooltipPosition={"top"}
                   error={domainError}
@@ -339,8 +337,8 @@ function NetworkSettingsTabContent({ account }: Readonly<Props>) {
             helpText={
               <>
                 Resolves DNS for routed domains on the routing peer instead of
-                on the client. Requires Aheadscale client v0.35 or higher. Changes
-                will only take effect after restarting the clients.{" "}
+                on the client. Requires Aheadscale client v0.35 or higher.
+                Changes will only take effect after restarting the clients.{" "}
                 <InlineLink
                   href={
                     "https://docs.netbird.io/how-to/accessing-entire-domains-within-networks#enabling-dns-wildcard-routing"
