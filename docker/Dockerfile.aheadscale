@@ -1,5 +1,5 @@
 # Build the static export first with Node 24.19.0: npm ci && npm run build.
-ARG BASE_IMAGE=netbirdio/dashboard:v2.94.0
+ARG BASE_IMAGE=local/aheadscale-dashboard-base@sha256:86f5fbb16c5bae1918dc2f09da6182144c30e45ecf75d7902038743094e7bdcd
 FROM ${BASE_IMAGE}
 COPY out/ /usr/share/nginx/html/
 COPY --chmod=755 docker/init_react_envs.sh /usr/local/init_react_envs.sh
